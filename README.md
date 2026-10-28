@@ -14,7 +14,7 @@ Site profissional e landing page mobile-first para a **Baro Cortes**, idealizado
 * **Plano Mensal (R$ 100/mês):** Cartão de destaque com botão de adesão no WhatsApp e pagamento online.
 * **Tabela de Serviços:** 7 serviços com seleção rápida e pré-preenchimento no formulário.
 * **Galeria de Cortes:** Portfólio horizontal com fotos reais em alta resolução preservando proporções.
-* **Localização e Contato:** Botão direto para WhatsApp, Instagram e rota no Google Maps para `Rua dos Pintados, 85`.
+* **Localização e Contato:** WhatsApp, Instagram e mapa interativo em visão de satélite com marcador na Rua dos Pintados, 85 — Parque do Lago, São Paulo–SP; botão para traçar a rota no Google Maps.
 
 ---
 
