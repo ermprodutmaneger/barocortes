@@ -1,6 +1,6 @@
 # Baro Cortes - Barbearia do Guilherme
 
-Site profissional e landing page mobile-first para a **Baro Cortes**, idealizado para o link da bio do Instagram ([@baro_cortes](https://www.instagram.com/baro_cortes/)) e pedidos de agendamento via WhatsApp e pagamento online via Pix (Mercado Pago).
+Site profissional e landing page mobile-first para a **Baro Cortes**, idealizado para o link da bio do Instagram ([@baro_cortes](https://www.instagram.com/baro_cortes/)) e pedidos de agendamento via WhatsApp e pagamento online via Pix (Banco do Brasil).
 
 ---
 
@@ -8,7 +8,7 @@ Site profissional e landing page mobile-first para a **Baro Cortes**, idealizado
 
 * **Design Mobile-First:** Rápido, leve e com visual moderno (preto, grafite e detalhes em azul elétrico).
 * **Seletor Rápido de Dias:** Carrossel de toque único (Hoje, Amanhã, Sex, Sáb...) sem necessidade de abrir calendário.
-* **Pagamento Pix Integrado:** Geração automática de QR Code no padrão Banco Central (BACEN) e código Pix Copia e Cola com o valor exato do corte embutido, direcionado para o CPF oficial do Guilherme (`51524549800`) no Mercado Pago.
+* **Pagamento Pix Integrado:** Geração automática de QR Code no padrão Banco Central (BACEN) e código Pix Copia e Cola com o valor exato do corte embutido, direcionado para o CPF oficial do Guilherme (`51524549800`) no Banco do Brasil.
 * **Agendamento no WhatsApp:** Preenchimento automático com nome, serviço, data brasileira (`DD/MM/AAAA`), horário e status de pagamento.
 * **Caixinha pro Guilherme:** Cartão dedicado com moldura dourada premium para apoio voluntário — o cliente escolhe valores fixos ou digita qualquer valor e gera o Pix na hora. Também é possível adicionar a caixinha dentro do próprio checkout de pagamento.
 * **Plano Mensal (R$ 100/mês):** Cartão de destaque com botão de adesão no WhatsApp e pagamento online.

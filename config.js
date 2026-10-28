@@ -5,12 +5,12 @@ window.BARO_CONFIG = {
   // Telefone e WhatsApp oficial da barbearia
   barberPhone: '5511948652519',
 
-  // Chave Pix oficial do Guilherme (CPF cadastrado no Mercado Pago)
+  // Chave Pix oficial do Guilherme (CPF cadastrado no Banco do Brasil)
   pixKey: '51524549800',
   pixKeyFormatted: '515.245.498-00',
   pixKeyType: 'CPF',
   pixReceiverName: 'GUILHERME',
-  pixBank: 'Mercado Pago',
+  pixBank: 'Banco do Brasil',
   pixCity: 'SAO PAULO',
 
   // Ativação de pagamento Pix online opcional
