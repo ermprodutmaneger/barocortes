@@ -1519,52 +1519,7 @@
   gap: 5px;
 }
 
-/* Payment Tabs */
-.checkout-tabs {
-  display: flex;
-  gap: 6px;
-  background: #0d1017;
-  padding: 4px;
-  border-radius: 12px;
-  margin-bottom: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.checkout-tab-btn {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-  padding: 10px 8px;
-  background: transparent;
-  border: none;
-  border-radius: 9px;
-  font-size: 0.86rem;
-  font-weight: 700;
-  color: var(--text-secondary);
-  cursor: pointer;
-  transition: var(--transition-fast);
-  font-family: inherit;
-}
-
-.checkout-tab-btn:hover {
-  color: #ffffff;
-}
-
-.checkout-tab-btn.active {
-  background: #1e2535;
-  color: #ffffff;
-  border: 1px solid rgba(59, 130, 246, 0.35);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-}
-
-/* Tab Panes */
 .checkout-pane {
-  display: none;
-}
-
-.checkout-pane.active {
   display: block;
 }
 
@@ -1716,89 +1671,6 @@
 .btn-pix-confirm-wa:hover, .btn-pix-confirm-wa:active {
   background: #20ba5a;
   box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
-}
-
-/* Credit Card Tab Content */
-.card-form-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 16px;
-}
-
-.card-field {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.card-label {
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: #cbd5e1;
-}
-
-.card-input-wrap {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.card-input {
-  width: 100%;
-  height: 46px;
-  background: #0d1017;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: var(--radius-md);
-  padding: 0 12px 0 38px;
-  font-size: 15px;
-  color: #ffffff;
-  font-family: inherit;
-  transition: var(--transition-fast);
-}
-
-.card-input:focus {
-  outline: none;
-  border-color: var(--blue-light);
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
-}
-
-.card-input-icon {
-  position: absolute;
-  left: 12px;
-  color: #64748b;
-  pointer-events: none;
-}
-
-.card-row-split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-
-.btn-pay-card-submit {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
-  width: 100%;
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-  color: #ffffff;
-  font-size: 0.96rem;
-  font-weight: 800;
-  padding: 14px;
-  border-radius: var(--radius-md);
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 4px 18px rgba(37, 99, 235, 0.35);
-  transition: var(--transition-fast);
-  min-height: 50px;
-  font-family: inherit;
-  margin-bottom: 12px;
-}
-
-.btn-pay-card-submit:hover {
-  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
 }
 
 /* Switch back to local payment */
@@ -2653,7 +2525,7 @@ html.splash-pending #splash {
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
               <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
             </svg>
-            Pagar Plano Online (R$ 100/mês)
+            Pagar plano com Pix (R$ 100/mês)
           </button>
         </div>
       </div>
@@ -2973,7 +2845,7 @@ html.splash-pending #splash {
           <!-- Forma de Pagamento (Opcional) -->
           <div class="form-group payment-section">
             <label class="form-label">
-              <span>Como prefere pagar?</span>
+              <span>Quando prefere pagar com Pix?</span>
               <span class="req" style="color: var(--text-secondary);">Opcional</span>
             </label>
             <div class="pay-options-grid">
@@ -2986,8 +2858,8 @@ html.splash-pending #splash {
                   </svg>
                 </div>
                 <div class="pay-option-info">
-                  <div class="pay-option-title">Pagar no local</div>
-                  <div class="pay-option-desc">Dinheiro, Pix ou Cartão no dia do corte</div>
+                  <div class="pay-option-title">Pix no atendimento</div>
+                  <div class="pay-option-desc">Pague com Pix no dia do corte</div>
                 </div>
                 <div class="pay-check-indicator"></div>
               </label>
@@ -3001,10 +2873,10 @@ html.splash-pending #splash {
                 </div>
                 <div class="pay-option-info">
                   <div class="pay-option-title">
-                    Pagar agora online
-                    <span class="pay-badge-instant">Pix / Cartão</span>
+                    Pix agora
+                    <span class="pay-badge-instant">Pix</span>
                   </div>
-                  <div class="pay-option-desc">Agilidade e horário pré-garantido</div>
+                  <div class="pay-option-desc">QR Code ou Pix Copia e Cola</div>
                 </div>
                 <div class="pay-check-indicator"></div>
               </label>
@@ -3463,8 +3335,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
-  <!-- Modal de Checkout Seguro Baro Cortes -->
-  <div id="checkout-modal" class="checkout-modal" role="dialog" aria-modal="true" aria-label="Checkout Seguro">
+  <!-- Modal de Pagamento por Pix Baro Cortes -->
+  <div id="checkout-modal" class="checkout-modal" role="dialog" aria-modal="true" aria-label="Pagamento por Pix">
     <div class="checkout-dialog">
       <!-- Header -->
       <div class="checkout-header">
@@ -3474,11 +3346,11 @@ document.addEventListener('DOMContentLoaded', () => {
               <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
               <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
             </svg>
-            Checkout Seguro
+            Pagamento por Pix
           </div>
           <span id="modal-order-id" style="font-size: 0.74rem; color: #94a3b8; font-family: monospace;">#BC-74979</span>
         </div>
-        <button id="checkout-close" class="checkout-close-btn" aria-label="Fechar checkout">&times;</button>
+        <button id="checkout-close" class="checkout-close-btn" aria-label="Fechar pagamento">&times;</button>
       </div>
 
       <!-- Resumo do Pedido -->
@@ -3495,25 +3367,8 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       </div>
 
-      <!-- Abas de Pagamento -->
-      <div class="checkout-tabs" role="tablist">
-        <button type="button" class="checkout-tab-btn active" id="tab-pix-btn" role="tab" aria-selected="true">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-          </svg>
-          Pix Instantâneo
-        </button>
-        <button type="button" class="checkout-tab-btn" id="tab-card-btn" role="tab" aria-selected="false">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
-            <line x1="1" y1="10" x2="23" y2="10"></line>
-          </svg>
-          Cartão de Crédito
-        </button>
-      </div>
-
-      <!-- Aba 1: PIX Instantâneo -->
-      <div class="checkout-pane active" id="pane-pix" role="tabpanel">
+      <!-- Pagamento por Pix -->
+      <div class="checkout-pane" id="pane-pix" role="region" aria-label="Pagamento por Pix">
         <div class="pix-qr-container">
           <div class="pix-qr-frame">
             <div id="pix-qr-container" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;"></div>
@@ -3611,71 +3466,10 @@ document.addEventListener('DOMContentLoaded', () => {
         </button>
       </div>
 
-      <!-- Aba 2: Cartão de Crédito -->
-      <div class="checkout-pane" id="pane-card" role="tabpanel">
-        <form id="credit-card-form">
-          <div class="card-form-grid">
-            <div class="card-field">
-              <label class="card-label">Número do Cartão</label>
-              <div class="card-input-wrap">
-                <span class="card-input-icon">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
-                    <line x1="1" y1="10" x2="23" y2="10"></line>
-                  </svg>
-                </span>
-                <input type="text" class="card-input" placeholder="0000 0000 0000 0000" maxlength="19" required>
-              </div>
-            </div>
-
-            <div class="card-field">
-              <label class="card-label">Nome impresso no Cartão</label>
-              <div class="card-input-wrap">
-                <span class="card-input-icon">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="12" cy="7" r="4"></circle>
-                  </svg>
-                </span>
-                <input type="text" class="card-input" placeholder="Ex: LUCAS SILVA" required>
-              </div>
-            </div>
-
-            <div class="card-row-split">
-              <div class="card-field">
-                <label class="card-label">Validade</label>
-                <input type="text" class="card-input" placeholder="MM/AA" maxlength="5" style="padding-left: 14px;" required>
-              </div>
-              <div class="card-field">
-                <label class="card-label">CVV</label>
-                <input type="password" class="card-input" placeholder="123" maxlength="4" style="padding-left: 14px;" required>
-              </div>
-            </div>
-
-            <div class="card-field">
-              <label class="card-label">Parcelamento</label>
-              <select class="form-select" style="height: 46px; font-size: 14px; padding-left: 14px;">
-                <option value="1">1x à vista (sem juros)</option>
-                <option value="2">2x no cartão (sem juros)</option>
-                <option value="3">3x no cartão (sem juros)</option>
-              </select>
-            </div>
-          </div>
-
-          <button type="submit" id="btn-pay-card" class="btn-pay-card-submit">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-            </svg>
-            Pagar com Cartão Seguro
-          </button>
-        </form>
-      </div>
-
       <!-- Opção de alternar para pagamento local -->
       <div class="checkout-switch-local">
         <button type="button" id="btn-switch-local" class="btn-switch-local">
-          Mudei de ideia: prefiro pagar pessoalmente no corte
+          Prefiro pagar com Pix no atendimento
         </button>
       </div>
     </div>
@@ -3697,11 +3491,8 @@ window.BARO_CONFIG = {
   pixBank: 'Mercado Pago',
   pixCity: 'SAO PAULO',
 
-  // Ativação de pagamento online opcional
+  // Ativação de pagamento Pix online opcional
   enableOnlinePayment: true,
-
-  // Se tiver conta no Mercado Pago, pode colocar sua Public Key aqui para checkout transparente:
-  mercadoPagoPublicKey: '',
 
   // Tabela oficial de preços (em Reais)
   services: {
@@ -3804,13 +3595,7 @@ window.BARO_CONFIG = {
     const pixTimer = document.getElementById('pix-timer');
     const btnPixConfirmWa = document.getElementById('btn-pix-confirm-wa');
 
-    const tabPixBtn = document.getElementById('tab-pix-btn');
-    const tabCardBtn = document.getElementById('tab-card-btn');
-    const panePix = document.getElementById('pane-pix');
-    const paneCard = document.getElementById('pane-card');
 
-    const cardForm = document.getElementById('credit-card-form');
-    const btnPayCard = document.getElementById('btn-pay-card');
     const btnSwitchLocal = document.getElementById('btn-switch-local');
     const btnPlanOnline = document.getElementById('btn-plan-online');
 
@@ -3846,7 +3631,7 @@ window.BARO_CONFIG = {
               <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
               <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
             </svg>
-            Pagar e Garantir Horário (R$ ${priceFormatted})
+            Gerar Pix (R$ ${priceFormatted})
           `;
         }
       } else {
@@ -3979,8 +3764,6 @@ window.BARO_CONFIG = {
       renderQr(pixCode);
       startTimer(900);
 
-      // Reset tabs to Pix
-      if (tabPixBtn) tabPixBtn.click();
 
       // Show modal
       if (checkoutModal) {
@@ -4112,57 +3895,6 @@ Esse horário está confirmado?`;
         const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`;
         window.open(url, '_blank');
         closeCheckout();
-      });
-    }
-
-    // Tab Switching
-    if (tabPixBtn && tabCardBtn && panePix && paneCard) {
-      tabPixBtn.addEventListener('click', () => {
-        tabPixBtn.classList.add('active');
-        tabCardBtn.classList.remove('active');
-        panePix.classList.add('active');
-        paneCard.classList.remove('active');
-      });
-      tabCardBtn.addEventListener('click', () => {
-        tabCardBtn.classList.add('active');
-        tabPixBtn.classList.remove('active');
-        paneCard.classList.add('active');
-        panePix.classList.remove('active');
-      });
-    }
-
-    // Credit Card Simulation / Gateway trigger
-    if (cardForm) {
-      cardForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        if (!currentOrder) return;
-
-        if (btnPayCard) {
-          btnPayCard.disabled = true;
-          btnPayCard.innerHTML = `Processando pagamento seguro...`;
-        }
-
-        setTimeout(() => {
-          if (btnPayCard) {
-            btnPayCard.disabled = false;
-            btnPayCard.innerHTML = 'Pagamento Aprovado! ✅';
-          }
-          let tipLine = '';
-          if (currentOrder.tip > 0) {
-            tipLine = `
-Caixinha pro Gui: R$ ${currentOrder.tip.toFixed(2)} (Total: R$ ${currentOrder.totalAmount.toFixed(2)})`;
-          }
-          const msg = `Olá, Guilherme! Vim pelo site da Baro Cortes e realizei o pagamento no cartão:
-Nome: ${currentOrder.clientName}
-Serviço: ${currentOrder.service} (R$ ${currentOrder.baseAmount.toFixed(2)})${tipLine}
-Dia: ${currentOrder.dateBr}
-Horário: ${currentOrder.time}
-Pagamento: Aprovado via Cartão de Crédito (Pedido #${currentOrder.orderId})
-Esse horário está confirmado?`;
-          const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`;
-          window.open(url, '_blank');
-          closeCheckout();
-        }, 1200);
       });
     }
 
@@ -4384,7 +4116,7 @@ Nome: ${nome}
 Serviço: ${servico}
 Dia: ${dataBr}
 Horário: ${horario}
-Pagamento: No atendimento (presencial)
+Pagamento: Pix no atendimento
 Esse horário está disponível?`;
           const whatsappUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
           window.open(whatsappUrl, '_blank');

@@ -87,13 +87,7 @@
     const pixTimer = document.getElementById('pix-timer');
     const btnPixConfirmWa = document.getElementById('btn-pix-confirm-wa');
 
-    const tabPixBtn = document.getElementById('tab-pix-btn');
-    const tabCardBtn = document.getElementById('tab-card-btn');
-    const panePix = document.getElementById('pane-pix');
-    const paneCard = document.getElementById('pane-card');
 
-    const cardForm = document.getElementById('credit-card-form');
-    const btnPayCard = document.getElementById('btn-pay-card');
     const btnSwitchLocal = document.getElementById('btn-switch-local');
     const btnPlanOnline = document.getElementById('btn-plan-online');
 
@@ -137,7 +131,7 @@
               <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
               <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
             </svg>
-            Pagar e Garantir Horário (R$ ${priceFormatted})
+            Gerar Pix (R$ ${priceFormatted})
           `;
         }
       } else {
@@ -270,8 +264,6 @@
       renderQr(pixCode);
       startTimer(900);
 
-      // Reset tabs to Pix
-      if (tabPixBtn) tabPixBtn.click();
 
       // Show modal
       if (checkoutModal) {
@@ -396,50 +388,6 @@
         const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`;
         window.open(url, '_blank');
         closeCheckout();
-      });
-    }
-
-    // Tab Switching
-    if (tabPixBtn && tabCardBtn && panePix && paneCard) {
-      tabPixBtn.addEventListener('click', () => {
-        tabPixBtn.classList.add('active');
-        tabCardBtn.classList.remove('active');
-        panePix.classList.add('active');
-        paneCard.classList.remove('active');
-      });
-      tabCardBtn.addEventListener('click', () => {
-        tabCardBtn.classList.add('active');
-        tabPixBtn.classList.remove('active');
-        paneCard.classList.add('active');
-        panePix.classList.remove('active');
-      });
-    }
-
-    // Credit Card Simulation / Gateway trigger
-    if (cardForm) {
-      cardForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        if (!currentOrder) return;
-
-        if (btnPayCard) {
-          btnPayCard.disabled = true;
-          btnPayCard.innerHTML = `Processando pagamento seguro...`;
-        }
-
-        setTimeout(() => {
-          if (btnPayCard) {
-            btnPayCard.disabled = false;
-            btnPayCard.innerHTML = 'Pagamento Aprovado! ✅';
-          }
-          let tipLine = '';
-          if (currentOrder.tip > 0) {
-            tipLine = `\nCaixinha pro Gui: R$ ${currentOrder.tip.toFixed(2)} (Total: R$ ${currentOrder.totalAmount.toFixed(2)})`;
-          }
-          const msg = `Olá, Guilherme! Vim pelo site da Baro Cortes e realizei o pagamento no cartão:\nNome: ${currentOrder.clientName}\nServiço: ${currentOrder.service} (R$ ${currentOrder.baseAmount.toFixed(2)})${tipLine}\nDia: ${currentOrder.dateBr}\nHorário: ${currentOrder.time}\nPagamento: Aprovado via Cartão de Crédito (Pedido #${currentOrder.orderId})\nEsse horário está confirmado?`;
-          const url = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`;
-          window.open(url, '_blank');
-          closeCheckout();
-        }, 1200);
       });
     }
 
@@ -584,7 +532,7 @@
         } else {
           // Local payment (presencial) -> Direct to WhatsApp
           e.preventDefault();
-          const message = `Olá, Guilherme! Vim pelo site da Baro Cortes e gostaria de agendar:\nNome: ${nome}\nServiço: ${servico}\nDia: ${dataBr}\nHorário: ${horario}\nPagamento: No atendimento (presencial)\nEsse horário está disponível?`;
+          const message = `Olá, Guilherme! Vim pelo site da Baro Cortes e gostaria de agendar:\nNome: ${nome}\nServiço: ${servico}\nDia: ${dataBr}\nHorário: ${horario}\nPagamento: Pix no atendimento\nEsse horário está disponível?`;
           const whatsappUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
           window.open(whatsappUrl, '_blank');
         }

@@ -13,11 +13,8 @@ window.BARO_CONFIG = {
   pixBank: 'Mercado Pago',
   pixCity: 'SAO PAULO',
 
-  // Ativação de pagamento online opcional
+  // Ativação de pagamento Pix online opcional
   enableOnlinePayment: true,
-
-  // Se tiver conta no Mercado Pago, pode colocar sua Public Key aqui para checkout transparente:
-  mercadoPagoPublicKey: '',
 
   // Tabela oficial de preços (em Reais)
   services: {
